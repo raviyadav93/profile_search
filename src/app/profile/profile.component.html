@@ -1,0 +1,74 @@
+<header>
+  <h1>GitHub Profile Search</h1>
+</header>
+<div class="container">
+  <div class="search-box">
+    <input type="text" name="username" id="search" [(ngModel)] = "username" 
+    placeholder = "please enter a gitHub username" (keyup)="onUserSearch()">
+  </div>
+  <div *ngIf = "userDetail">
+    <div class="panel">
+      <div class="panel-heading">
+        {{userDetail.login}}
+      </div> 
+    <div class="row">
+      <div class="col-40">
+        <img [src]="userDetail.avatar_url" alt="{{userDetail.login}}" 
+        class= "img-thumbnail" >
+        <div class="bio">
+          <a href="{{userDetail.html_url}}" target="_blank"><h2>{{userDetail.name}}</h2></a>          
+          <h5>{{userDetail.login}}</h5>
+        </div>          
+      </div>
+
+        <div class="col-50">
+          <div class="flexyspan">
+            <span class="label label-blue">{{userDetail.public_repos}} Public Repos</span>
+            <span class="label label-green">{{userDetail.public_gists}} Public Gists</span>
+            <span class="label label-cyan">{{userDetail.followers}} Followers</span>
+            <span class="label label-orange">{{userDetail.following}} Following</span>
+
+          </div>
+          <ul class="list-group">
+            <li class="list-group-item"><strong>Username:</strong>{{userDetail.login}}</li>
+            <li class="list-group-item"><strong>Location:</strong>{{userDetail.location}}</li>
+            <li class="list-group-item"><strong>Email:</strong>{{userDetail.email}}</li>
+            <li class="list-group-item"><strong>Blog:</strong>{{userDetail.blog}}</li>
+            <li class="list-group-item"><strong>Member Since:</strong>{{userDetail.created_at}}</li>
+          </ul>          
+        </div>
+      </div>
+    
+    </div> 
+    
+    <!-- repos -->
+    <div class="panel">
+      <div class="panel-heading">
+        Repos
+      </div>
+      <div *ngFor ="let repos of userRepos">
+        <div class="row">
+          <div class="col-80">
+            <h4><a href="{{repos.html_url}}" target="_blank">{{repos.name}}</a></h4>
+            <p>{{repos.description}}</p>
+        
+          </div>
+          <div class="col-20">
+            <span class="label label-blue">{{repos.watchers}} watchers</span> 
+            <span class="label label-green">{{repos.forks}} forks</span>
+          </div>
+                  
+        </div>
+        <hr>
+
+      </div>
+      
+    </div>
+    
+  </div>
+
+  <div class="panel panel-heading" *ngIf="!userDetail">
+    Please enter a valid username to search...
+  </div>
+</div>
+
