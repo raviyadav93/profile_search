@@ -67,12 +67,12 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.spec.json",
-            "karmaConfig": "src/karma.conf.js",
+            "main": "./src/test.ts",
+            "polyfills": "./src/polyfills.ts",
+            "tsConfig": "./src/tsconfig.spec.json",
+            "karmaConfig": "./src/karma.conf.js",
             "styles": [
-              "src/styles.css"
+              "./src/styles.css"
             ],
             "scripts": [],
             "assets": [
@@ -85,8 +85,8 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "src/tsconfig.app.json",
-              "src/tsconfig.spec.json"
+              "./src/tsconfig.app.json",
+              "./src/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
