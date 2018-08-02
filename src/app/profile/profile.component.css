@@ -45,6 +45,9 @@ header h1{
     margin: 10px 20px;
     border-top: 1px solid #ece5e5;
 }
+.row hr:last-child {
+    border-top: none;
+}
 
 .panel-heading{
     padding: 10px;
