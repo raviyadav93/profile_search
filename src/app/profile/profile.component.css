@@ -45,9 +45,6 @@ header h1{
     margin: 10px 20px;
     border-top: 1px solid #ece5e5;
 }
-.row hr:last-child {
-    border-top: none;
-}
 
 .panel-heading{
     padding: 10px;
@@ -96,6 +93,9 @@ header h1{
   max-width: 60%;
   height: auto;
   margin-left: 20px;
+}
+.flex-label{
+    display: flex;
 }
 
 .col-40 h2, .col-40 p{
@@ -180,5 +180,32 @@ li.list-group-item {
     display: block;
     border-bottom: 1px solid #dee2e6;
     padding: 10px;
+
+}
+
+@media only screen and (max-width: 800px){
+    
+.container{
+    width: 90%;
+    margin: 20px auto;
+    position: relative;
+}
+}
+
+@media only screen and (max-width: 800px){
+    
+.container{
+    width: 90%;
+    margin: 20px auto;
+    position: relative;
+}
+.row{
+   flex-direction: column;
+    
+}
+
+.flex-label{
+    margin-left: 50px;
+}
 
 }

@@ -1,11 +1,11 @@
-import { Http, Response } from '@angular/http';
+import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs/operators';
+
 
 @Injectable()
 export class  GitService{
     private clientId = 'c99b12d78f54295bdaf1';
-    private secret = '173cce860621f48f66725e1c41cfce80ed7e79f3';
+    private secret = '7dd1beddd29d489be56355c83ac413c7cf3ddf32';
 
        constructor(private http: Http){
         
@@ -17,7 +17,7 @@ export class  GitService{
     }
 
     getRepos(username: string){
-        return this.http.get('https://api.github.com/users/' + username+'/repos');
+        return this.http.get('https://api.github.com/users/' + username + '/repos' + '?client_id=' + this.clientId + '&client_secret=' + this.secret);
 
     }
 }
